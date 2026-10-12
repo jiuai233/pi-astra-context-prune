@@ -1,0 +1,28 @@
+{
+  "name": "pi-astra-context-prune",
+  "version": "0.1.0",
+  "description": "仅对 Astra 生效的 Pi 工具输出裁剪，支持后台摘要和分页原文恢复。",
+  "type": "module",
+  "main": "./dist/index.js",
+  "exports": "./dist/index.js",
+  "files": ["dist/index.js", "README.md", "LICENSE", "THIRD_PARTY_LICENSES.txt"],
+  "license": "MIT",
+  "repository": { "type": "git", "url": "git+https://github.com/jiuai233/pi-astra-context-prune.git" },
+  "engines": { "node": ">=24" },
+  "pi": { "extensions": ["./dist/index.js"] },
+  "scripts": {
+    "build": "node scripts/build.mjs",
+    "pretest": "npm run build",
+    "test": "node --test --test-concurrency=1 test/*.test.ts test/*.test.mjs",
+    "check": "npm test",
+    "prepack": "npm run build"
+  },
+  "peerDependencies": { "@earendil-works/pi-coding-agent": ">=1.1.0" },
+  "devDependencies": {
+    "@earendil-works/pi-coding-agent": "1.1.0",
+    "@earendil-works/pi-ai": "1.1.0",
+    "@sinclair/typebox": "0.34.52",
+    "esbuild": "0.28.2",
+    "gpt-tokenizer": "4.0.0"
+  }
+}
